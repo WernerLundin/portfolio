@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/static/smhiscript.js" defer></script>
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>SMHI App</title>
+  </head>
+
+  <body>
+    <div class="fake-body">
+      <h1 class="h1">SMHI APP</h1>
+      <div class="button-and-form">
+        <div class="button-div">
+          <button id="södertälje">Södertälje</button>
+          <button id="stockholm">Stockholm</button>
+        </div>
+        <form id="weather-form" class="weather-form">
+          <input id="lat" name="lat" placeholder="latitud" type="text" />
+          <input id="lon" name="lon" placeholder="longitud" type="text" />
+          <button id="weather-btn">Hämta väder</button>
+        </form>
+      </div>
+      <div class="compass">
+        <div class="compass-inner">
+          <div class="north">N</div>
+          <div class="east">E</div>
+          <div class="west">W</div>
+          <div class="south">S</div>
+          <div id="arrow" class="main-arrow-north">
+            <div class="arrow-up"></div>
+            <div class="arrow-down"></div>
+          </div>
+        </div>
+      </div>
+      <div id="weather-div" class="weather-div"></div>
+      <div id="weather-list" class="weather-list"></div>
+
+      <div id="outer-saved-weather-list" class="outer-saved-weather-list">
+        <button id="saved-weather-button" class="saved-weather-button">
+          Refresh
+        </button>
+        <div id="saved-weather-list" class="saved-weather-list"></div>
+      </div>
+    </div>
+  </body>
+</html>
