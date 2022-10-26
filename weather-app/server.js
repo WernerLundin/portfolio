@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const userRouter = require("./routes/users");
 const mongoose = require("mongoose");
 const mongodb = require("mongodb");
 const cors = require("cors");
@@ -10,7 +9,6 @@ const PORT = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 app.set("view engine", "ejs");
-app.use("/users", userRouter);
 app.use("/static", express.static("static"));
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,23 +28,7 @@ const weatherSchema = new mongoose.Schema({
 
 const Day = mongoose.model("day", weatherSchema);
 
-// app.get("/", (req, res) => {
-//   console.log("lol");
-//res.json(found);
-//res.json(found);
-// });
-
 app.get("/", (req, res) => {
-  // Day.find({}, (err, found) => {
-  //   if (!err) {
-  //     console.log(found);
-  //   } else {
-  //     console.log(err);
-  //     res.send("Some error occured!");
-  //   }
-  // })
-  //   .clone()
-  //   .catch((err) => console.log("Error occured, " + err));
   res.render("index");
 });
 
